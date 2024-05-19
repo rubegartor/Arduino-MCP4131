@@ -1,10 +1,3 @@
-/*
- Library written for use with Common-Anode 7-Segment Display. For more information on how to use this library,
- please refer to the github README.
- Written by: Derek Duncan
- Data: 4/7/2018
-*/
-
 #include "Arduino.h"
 #include "MCP4131.h"
 #include <SPI.h>
@@ -12,9 +5,12 @@
 int slaveSelectPin;
 
 MCP4131::MCP4131(int slavePin) {
-    SPI.begin();
     slaveSelectPin = slavePin;
 	pinMode(slavePin, OUTPUT);
+}
+
+void MCP4131::init() {
+    SPI.begin();
 }
 
 byte MCP4131::readWiper() {

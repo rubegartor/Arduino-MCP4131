@@ -1,10 +1,3 @@
-/*
- 
- 
- Written by: Derek Duncan
- Data: 04/03/2018
- */
-
 #ifndef MCP4131_H
 #define MCP4131_H
 
@@ -14,6 +7,7 @@ class MCP4131
 {
     public:
         MCP4131(int slave_select_pin);
+        void init();
         byte readWiper();
         void writeWiper(unsigned int wiperValue);
         void decrementWiper();
